@@ -4,6 +4,8 @@
 
 {% load crispy_forms_tags %}
 
+{% load bootstrap3 %}
+
 
 {% block content %}
 
@@ -11,7 +13,7 @@
 
         <form action="" method="post">
             {% csrf_token %}
-            {{ form|crispy }}
+            {% bootstrap_form form layout='inline' %}
             <input class="btn btn-primary" type="submit" value="Create">
         </form>
 

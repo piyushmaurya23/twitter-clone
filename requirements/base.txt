@@ -45,3 +45,8 @@ redis>=2.10.0
 
 
 # Your custom requirements go here
+djangorestframework==3.3.3
+Markdown==2.6.6
+django-filter==0.13.0
+django-rest-auth==0.7.0
+django-bootstrap3==7.0.1

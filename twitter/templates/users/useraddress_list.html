@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+    {% include "users/useraddress.html" with object_list=useraddress_list %}
+
+{% endblock %}

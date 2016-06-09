@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+
+        {% for object in object_list %}
+            <div class="col s4">
+                <h4>Address
+                    <small>
+                        <a href="{% url 'users:address_update' object.pk %}"><i class="fa fa-pencil"
+                                                                                aria-hidden="true"></i></a>
+                    </small>
+                    <small>
+                        <a href="{% url 'users:address_delete' object.pk %}"><i class="fa fa-trash"
+                                                                                aria-hidden="true"></i></a>
+                    </small>
+                </h4>
+                <p>{{ object.address1 }}</p>
+                <p>{{ object.address2 }}</p>
+                <p>{{ object.city }}</p>
+                <p>{{ object.pin_code }}</p>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+

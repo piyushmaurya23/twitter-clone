@@ -1,0 +1,5 @@
+[run]
+include = twitter/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin

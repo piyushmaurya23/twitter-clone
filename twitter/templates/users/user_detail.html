@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ object.username }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+            <br>
+            <div class="col-md-2">
+                {% if object.profile_pic %}
+                    <img src="{{ object.profile_pic.url }}" alt="profile-pic" class="img-fluid img-circle">
+                {% else %}
+                    <a class="btn btn-default" href="{% url 'users:update' %}">Upload Image</a>
+                {% endif %}
+            </div>
+            <div class="col-md-6 col-md-offset-4">
+                {% if object.first_name %}
+
+                    <h4>{{ object.first_name }} {{ object.last_name }}</h4>
+
+                    <a class="btn btn-primary" href="{% url 'users:update' %}">Update Details</a>
+                    {#                <a class="btn btn-primary" href="{% url 'account_email' %}">E-Mail</a>#}
+                {% endif %}
+            </div>
+        </div>
+        <hr>
+    </div>
+    {% if object.about_me %}
+
+
+    <div class="container">
+        <h5>About me</h5>
+        <p>{{ object.about_me }}</p>
+    </div>
+
+    {% endif %}
+
+    <div class="container">
+        <p><h4>User Addresses</h4></p>
+
+    </div>
+
+
+    {% include 'users/useraddress.html' with object_list=address %}
+
+
+
+{% endblock %}

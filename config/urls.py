@@ -22,7 +22,10 @@ urlpatterns = [
                   # Your stuff: custom urls includes go here
                   url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
                   url(r'^rest-auth/', include('rest_auth.urls')),
-                  #url(r'^rest-auth/registration/', include('rest_auth.registration.urls'))
+                  url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+
+                  # custom app urls
+                  url(r'^tweets/', include('twitter.tweets.urls', namespace='tweets')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

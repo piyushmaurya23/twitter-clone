@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+        <h4>Address</h4><hr>
+        <p>{{ object.address1 }}</p>
+        <p>{{ object.address2 }}</p>
+        <p>{{ object.city }}</p>
+        <p>{{ object.pin_code }}</p>
+
+
+
+
+{% endblock %}

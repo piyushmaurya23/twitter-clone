@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView, CreateView, DeleteView
 
 from .models import User, UserAddress
+from twitter.tweets.models import Tweet
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -22,6 +23,7 @@ class UserDetailView(LoginRequiredMixin, DetailView):
         """
         context = super(UserDetailView, self).get_context_data(**kwargs)
         context["address"] = UserAddress.objects.all()
+        context["tweet"] = Tweet.objects.all()
         return context
 
 

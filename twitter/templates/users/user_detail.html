@@ -39,6 +39,18 @@
     {% endif %}
 
     <div class="container">
+        <p><h4>User Tweets
+        <small><a class="btn-floating btn-small waves-effect waves-light red" href="{% url 'tweets:create' %}"><i
+                class="material-icons">add</i></a></small>
+    </h4></p>
+
+    </div>
+
+    {% include 'tweets/tweet.html' with object_list=tweet %}
+
+    <hr>
+
+    <div class="container">
         <p><h4>User Addresses
         <small><a class="btn-floating btn-small waves-effect waves-light red" href="{% url 'users:address_create' %}"><i
                 class="material-icons">add</i></a></small>

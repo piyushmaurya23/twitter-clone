@@ -26,6 +26,7 @@ urlpatterns = [
 
                   # custom app urls
                   url(r'^tweets/', include('twitter.tweets.urls', namespace='tweets')),
+                  url(r'^locations/', include('twitter.locations.urls', namespace='locations')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

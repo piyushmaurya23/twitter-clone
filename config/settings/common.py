@@ -51,6 +51,7 @@ LOCAL_APPS = (
     'twitter.users',  # custom users app
     # Your stuff: custom apps go here
     'twitter.tweets',
+    'twitter.locations',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

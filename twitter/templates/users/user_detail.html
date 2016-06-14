@@ -31,18 +31,22 @@
     {% if object.about_me %}
 
 
-    <div class="container">
-        <h5>About me</h5>
-        <p>{{ object.about_me }}</p>
-    </div>
+        <div class="container">
+            <h5>About me</h5>
+            <p>{{ object.about_me }}</p>
+        </div>
 
     {% endif %}
 
     <div class="container">
-        <p><h4>User Tweets
-        <small><a class="btn-floating btn-small waves-effect waves-light red" href="{% url 'tweets:create' %}"><i
-                class="material-icons">add</i></a></small>
-    </h4></p>
+        <p>
+        <h4>User Tweets
+            <small><a class="btn-floating btn-small waves-effect waves-light red" href="{% url 'tweets:create' %}">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+
+            </a></small>
+        </h4>
+        </p>
 
     </div>
 
@@ -51,10 +55,15 @@
     <hr>
 
     <div class="container">
-        <p><h4>User Addresses
-        <small><a class="btn-floating btn-small waves-effect waves-light red" href="{% url 'users:address_create' %}"><i
-                class="material-icons">add</i></a></small>
-    </h4></p>
+        <p>
+        <h4>User Addresses
+            <small><a class="btn-floating btn-small waves-effect waves-light red"
+                      href="{% url 'users:address_create' %}">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+
+            </a></small>
+        </h4>
+        </p>
 
     </div>
 

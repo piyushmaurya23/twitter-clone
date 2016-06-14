@@ -41,6 +41,7 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
         'last_name',
         'about_me',
         'mobile_number',
+        'location',
         'profile_pic',
     ]
 

@@ -7,6 +7,8 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
+from twitter.locations.models import Location
+
 
 @python_2_unicode_compatible
 class User(AbstractUser):
@@ -17,6 +19,7 @@ class User(AbstractUser):
     mobile_number = models.CharField(max_length=10, blank=True)
     about_me = models.TextField(max_length=500, blank=True)
     profile_pic = models.ImageField(upload_to='users/profile/%m/', blank=True)
+    location = models.ForeignKey(Location, blank=True, null=True)
 
     def __str__(self):
         return self.username

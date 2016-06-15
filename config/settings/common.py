@@ -183,9 +183,9 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'twitter.users.serializers.RegisterSerializer',
-}
+# REST_AUTH_REGISTER_SERIALIZERS = {
+#     'REGISTER_SERIALIZER': 'twitter.users.serializers.RegisterSerializer',
+# }
 
 # REST_AUTH_SERIALIZERS = {
 #     'LOGIN_SERIALIZER': 'twitter.users.serializers.LoginSerializer',

@@ -49,17 +49,17 @@ class RegisterSerializer(serializers.Serializer):
         return user
 
 
-class LoginSerializer(serializers.Serializer):
-    email = serializers.EmailField(required=True, allow_blank=False)
-    password = serializers.CharField(style={'input_type': 'password'})
-
-    def _validate_email(self, email, password):
-        user = None
-
-        if email and password:
-            user = authenticate(email=email, password=password)
-        else:
-            msg = _('Must include "email" and "password".')
-            raise exceptions.ValidationError(msg)
-
-        return user
+# class LoginSerializer(serializers.Serializer):
+#     email = serializers.EmailField(required=True, allow_blank=False)
+#     password = serializers.CharField(style={'input_type': 'password'})
+#
+#     def _validate_email(self, email, password):
+#         user = None
+#
+#         if email and password:
+#             user = authenticate(email=email, password=password)
+#         else:
+#             msg = _('Must include "email" and "password".')
+#             raise exceptions.ValidationError(msg)
+#
+#         return user

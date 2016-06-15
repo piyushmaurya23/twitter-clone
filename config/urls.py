@@ -23,6 +23,7 @@ urlpatterns = [
                   url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
                   url(r'^rest-auth/', include('rest_auth.urls')),
                   url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+                  url(r'^ajax_select/', include('ajax_select.urls')),
 
                   # custom app urls
                   url(r'^tweets/', include('twitter.tweets.urls', namespace='tweets')),

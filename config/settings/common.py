@@ -30,6 +30,8 @@ DJANGO_APPS = (
 
     # Useful template tags:
     # 'django.contrib.humanize',
+    'dal',
+    'dal_select2',
 
     # Admin
     'django.contrib.admin',
@@ -43,7 +45,10 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'rest_auth.registration',
     'allauth.socialaccount',  # registration
+    'allauth.socialaccount.providers.facebook',  # facebook
+    'allauth.socialaccount.providers.google',  # google
     'bootstrap3',
+    'ajax_select',
 )
 
 # Apps specific for this project go here.

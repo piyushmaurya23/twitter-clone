@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
+from dal import autocomplete
 from django.conf.urls import url
 
 from . import views
+from .models import User
 
 urlpatterns = [
     # URL pattern for the UserListView
@@ -33,6 +35,9 @@ urlpatterns = [
         view=views.UserUpdateView.as_view(),
         name='update'
     ),
+
+
+
     url(r'^address/create/$', views.UserAddressCreateView.as_view(), name='address_create'),
     url(r'^address/(?P<pk>\d+)/$', views.UserAddressDetailView.as_view(), name='address_detail'),
     url(r'^address/(?P<pk>\d+)/update/$', views.UserAddressUpdateView.as_view(), name='address_update'),

@@ -12,7 +12,6 @@ from twitter.locations.models import Location
 
 @python_2_unicode_compatible
 class User(AbstractUser):
-
     # First Name and Last Name do not cover name patterns
     # around the globe.
     name = models.CharField(_('Name'), blank=True, max_length=255)
@@ -37,3 +36,11 @@ class UserAddress(models.Model):
 
     def get_absolute_url(self):
         return reverse("users:address_detail", kwargs={"pk": self.pk})
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    follows = models.ManyToManyField('self', related_name='followed_by', symmetrical=False)
+
+    def __str__(self):
+        return self.user.first_name

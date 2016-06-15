@@ -6,17 +6,17 @@ from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
 from django.conf import settings
 from django.contrib.auth.models import User
 
-#
-# class MyAdapter(DefaultSocialAccountAdapter):
-#     def pre_social_login(self, request, sociallogin):
-#         # This isn't tested, but should work
-#         try:
-#             user = User.objects.get(email=sociallogin.email)
-#             sociallogin.connect(request, user)
-#             # Create a response object
-#             raise ImmediateHttpResponse(response)
-#         except User.DoesNotExist:
-#             pass
+
+class MyAdapter(DefaultSocialAccountAdapter):
+    def pre_social_login(self, request, sociallogin):
+        # This isn't tested, but should work
+        try:
+            user = User.objects.get(email=sociallogin.email)
+            sociallogin.connect(request, user)
+            # Create a response object
+            raise ImmediateHttpResponse(response)
+        except User.DoesNotExist:
+            pass
 
 
 class AccountAdapter(DefaultAccountAdapter):

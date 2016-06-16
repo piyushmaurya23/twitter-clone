@@ -4,6 +4,7 @@ from allauth.account.models import EmailAddress
 from allauth.exceptions import ImmediateHttpResponse
 from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
 from django.conf import settings
+from django.http import response
 from twitter.users.models import User
 
 
@@ -11,10 +12,10 @@ class MyAdapter(DefaultSocialAccountAdapter):
     def pre_social_login(self, request, sociallogin):
         # This isn't tested, but should work
         try:
-            user = User.objects.get(email=sociallogin.email)
+            user = User.objects.get(email=sociallogin.user.email)
             sociallogin.connect(request, user)
             # Create a response object
-            raise ImmediateHttpResponse(response)
+            raise ImmediateHttpResponse("can't be connected")
         except User.DoesNotExist:
             pass
 

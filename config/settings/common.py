@@ -240,13 +240,14 @@ ACCOUNT_SIGNUP_FORM_CLASS = 'twitter.users.forms.SignupForm'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
+SOCIALACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 ACCOUNT_ADAPTER = 'twitter.users.adapters.AccountAdapter'
-SOCIALACCOUNT_ADAPTER = 'twitter.users.adapters.MyAdapter'
+SOCIALACCOUNT_ADAPTER = 'twitter.users.adapters.SocialAccountAdapter'
 
 # Custom user app defaults
 # Select the correct user model

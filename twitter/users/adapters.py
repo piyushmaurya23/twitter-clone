@@ -4,7 +4,7 @@ from allauth.account.models import EmailAddress
 from allauth.exceptions import ImmediateHttpResponse
 from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
 from django.conf import settings
-from django.contrib.auth.models import User
+from twitter.users.models import User
 
 
 class MyAdapter(DefaultSocialAccountAdapter):

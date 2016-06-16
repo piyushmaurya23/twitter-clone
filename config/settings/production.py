@@ -101,6 +101,10 @@ MEDIA_URL = 'https://s3-ap-southeast-1.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_N
 # ------------------------
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# allauth settings
+# ------------------------------------------------------------------------------
+SOCIALACCOUNT_ADAPTER = 'twitter.users.adapters.SocialAccountAdapter'
+
 
 # EMAIL
 # ------------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 from django.core.urlresolvers import reverse,reverse_lazy
 from braces.views import LoginRequiredMixin
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
-from rest_framework.generics import ListCreateAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
 from .models import Tweet
 from .serializers import TweetSerializer
@@ -67,3 +67,8 @@ class TweetAPIView(ListCreateAPIView):
     queryset = Tweet.objects.all()
     serializer_class = TweetSerializer
 
+
+class TweetPutAPIView(RetrieveUpdateDestroyAPIView):
+    model = Tweet
+    queryset = Tweet.objects.all()
+    serializer_class = TweetSerializer

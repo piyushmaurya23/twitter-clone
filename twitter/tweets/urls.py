@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^list/$', views.TweetListView.as_view(), name='list'),
     url(r'^(?P<pk>\d+)/delete/$', views.TweetDeleteView.as_view(), name='delete'),
     url(r'^api/$', views.TweetAPIView.as_view(), name='api'),
+    url(r'^api/(?P<pk>\d+)$', views.TweetAPIView.as_view(), name='put_api'),
 ]

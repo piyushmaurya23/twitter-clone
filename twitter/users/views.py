@@ -124,14 +124,14 @@ class UserAddressDeleteView(LoginRequiredMixin, DeleteView):
                        kwargs={'username': self.request.user.username})
 
 
-class UserAddressReadAPIView(ListCreateAPIView):
-    # model = UserAddress
+class UserAddressAPIView(ListCreateAPIView):
+    model = UserAddress
     queryset = UserAddress.objects.all()
     serializer_class = UserAddressSerializers
     # permission_classes = (IsAuthenticated,)
 
 
-class UserAddressRetrieveAPIView(RetrieveUpdateDestroyAPIView):
+class UserAddressPutAPIView(RetrieveUpdateDestroyAPIView):
     model = UserAddress
     queryset = UserAddress.objects.all()
     serializer_class = UserAddressSerializers

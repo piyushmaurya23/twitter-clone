@@ -39,6 +39,6 @@ urlpatterns = [
     url(r'^address/(?P<pk>\d+)/update/$', views.UserAddressUpdateView.as_view(), name='address_update'),
     url(r'^address/list/$', views.UserAddressListView.as_view(), name='address_list'),
     url(r'^address/(?P<pk>\d+)/delete/$', views.UserAddressDeleteView.as_view(), name='address_delete'),
-    url(r'^address/api/$', views.UserAddressReadAPIView.as_view(), name='api'),
-    url(r'^api/(?P<pk>\d+)/$', views.UserAddressRetrieveAPIView.as_view(), name='post_api'),
+    url(r'^address/api/$', views.UserAddressAPIView.as_view(), name='api'),
+    url(r'^address/api/(?P<pk>\d+)/$', views.UserAddressPutAPIView.as_view(), name='put_api'),
 ]

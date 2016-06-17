@@ -1,11 +1,17 @@
-from allauth.account import app_settings as allauth_settings
-from allauth.account.adapter import get_adapter
-from allauth.account.utils import setup_user_email
-from allauth.utils import email_address_exists
-from django.contrib.auth import authenticate
-from django.utils.translation import ugettext_lazy as _
-from rest_framework import serializers, exceptions
+from rest_framework import serializers
 
+from .models import User
+
+
+class UserDetailsSerializer(serializers.ModelSerializer):
+    """
+    User model w/o password
+    """
+
+    class Meta:
+        model = User
+        fields = ('email', 'first_name', 'last_name', 'mobile_number', 'about_me', 'profile_pic', 'location')
+        read_only_fields = ('email',)
 
 # class RegisterSerializer(serializers.Serializer):
 #     email = serializers.EmailField(required=allauth_settings.EMAIL_REQUIRED)

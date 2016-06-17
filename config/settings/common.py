@@ -187,9 +187,10 @@ AUTHENTICATION_BACKENDS = (
 #     'REGISTER_SERIALIZER': 'twitter.users.serializers.RegisterSerializer',
 # }
 
-# REST_AUTH_SERIALIZERS = {
-#     'LOGIN_SERIALIZER': 'twitter.users.serializers.LoginSerializer',
-# }
+REST_AUTH_SERIALIZERS = {
+    # 'LOGIN_SERIALIZER': 'twitter.users.serializers.LoginSerializer',
+    'USER_DETAILS_SERIALIZER': 'twitter.users.serializers.UserDetailsSerializer'
+}
 
 # See: http://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
 CRISPY_TEMPLATE_PACK = 'bootstrap3'

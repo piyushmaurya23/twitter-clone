@@ -14,12 +14,13 @@ class UserDetailsSerializer(serializers.ModelSerializer):
         read_only_fields = ('email',)
 
 
-class UserAddressSerializers(serializers.Serializer):
+class UserAddressSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = UserAddress
 
         fields = (
+            'user',
             'address1',
             'address2',
             'city',

@@ -125,7 +125,7 @@ class UserAddressDeleteView(LoginRequiredMixin, DeleteView):
 
 
 class UserAddressReadAPIView(ListCreateAPIView):
-    model = UserAddress
+    # model = UserAddress
     queryset = UserAddress.objects.all()
     serializer_class = UserAddressSerializers
     # permission_classes = (IsAuthenticated,)

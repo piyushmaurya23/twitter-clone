@@ -5,9 +5,12 @@ from braces.views import LoginRequiredMixin, StaffuserRequiredMixin
 from django.core.urlresolvers import reverse
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView, CreateView, DeleteView
+from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
+from rest_framework.permissions import IsAuthenticated
 
-from .models import User, UserAddress
 from twitter.tweets.models import Tweet
+from .models import User, UserAddress
+from .serializers import UserAddressSerializers
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -119,3 +122,17 @@ class UserAddressDeleteView(LoginRequiredMixin, DeleteView):
     def get_success_url(self):
         return reverse('users:detail',
                        kwargs={'username': self.request.user.username})
+
+
+class UserAddressReadAPIView(ListCreateAPIView):
+    model = UserAddress
+    queryset = UserAddress.objects.all()
+    serializer_class = UserAddressSerializers
+    # permission_classes = (IsAuthenticated,)
+
+
+class UserAddressRetrieveAPIView(RetrieveUpdateDestroyAPIView):
+    model = UserAddress
+    queryset = UserAddress.objects.all()
+    serializer_class = UserAddressSerializers
+    # permission_classes = (IsAuthenticated,)

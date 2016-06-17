@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import User
+from .models import User, UserAddress
 
 
 class UserDetailsSerializer(serializers.ModelSerializer):
@@ -12,6 +12,19 @@ class UserDetailsSerializer(serializers.ModelSerializer):
         model = User
         fields = ('email', 'first_name', 'last_name', 'mobile_number', 'about_me', 'profile_pic', 'location')
         read_only_fields = ('email',)
+
+
+class UserAddressSerializers(serializers.Serializer):
+
+    class Meta:
+        model = UserAddress
+
+        fields = (
+            'address1',
+            'address2',
+            'city',
+            'pin_code',
+        )
 
 # class RegisterSerializer(serializers.Serializer):
 #     email = serializers.EmailField(required=allauth_settings.EMAIL_REQUIRED)

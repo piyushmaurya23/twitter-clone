@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
-from dal import autocomplete
 from django.conf.urls import url
 
 from . import views
-from .models import User
 
 urlpatterns = [
     # URL pattern for the UserListView
@@ -36,11 +34,11 @@ urlpatterns = [
         name='update'
     ),
 
-
-
     url(r'^address/create/$', views.UserAddressCreateView.as_view(), name='address_create'),
     url(r'^address/(?P<pk>\d+)/$', views.UserAddressDetailView.as_view(), name='address_detail'),
     url(r'^address/(?P<pk>\d+)/update/$', views.UserAddressUpdateView.as_view(), name='address_update'),
     url(r'^address/list/$', views.UserAddressListView.as_view(), name='address_list'),
     url(r'^address/(?P<pk>\d+)/delete/$', views.UserAddressDeleteView.as_view(), name='address_delete'),
+    url(r'^address/api/$', views.UserAddressReadAPIView.as_view(), name='api'),
+    url(r'^api/(?P<pk>\d+)/$', views.UserAddressRetrieveAPIView.as_view(), name='post_api'),
 ]
